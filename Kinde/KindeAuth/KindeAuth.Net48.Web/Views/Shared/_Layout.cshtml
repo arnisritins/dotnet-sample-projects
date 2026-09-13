@@ -16,7 +16,10 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-            <span>Welcome, <strong>@username</strong> | </span>
+            <span>Welcome, <strong>@username</strong></span>
+            <span>|</span>
+            <a href="@Url.Action("Index", "Account")">Profile</a>
+            <span>|</span>
             <a href="@Url.Action("SignOut", "Account")">Sign Out</a>
         }
         else
