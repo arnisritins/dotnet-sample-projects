@@ -10,6 +10,12 @@ namespace KindeAuth.Net48.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "SignoutCallback",
+                url: "signout-callback-oidc",
+                defaults: new { controller = "Account", action = "SignoutCallbackOidc" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

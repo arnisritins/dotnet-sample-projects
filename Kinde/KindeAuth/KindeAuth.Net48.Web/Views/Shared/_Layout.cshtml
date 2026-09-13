@@ -1,5 +1,7 @@
 ﻿@{
-    Layout = null;
+    var username = ((System.Security.Claims.ClaimsIdentity)User.Identity)
+        .FindFirst("name")?
+        .Value;
 }
 <!DOCTYPE html>
 <html>
@@ -8,6 +10,23 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="@Url.Action("Secret", "Home")">Secret</a> |
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <span>Welcome, <strong>@username</strong> | </span>
+            <a href="@Url.Action("SignOut", "Account")">Sign Out</a>
+        }
+        else
+        {
+            <a href="@Url.Action("SignIn", "Account")">Sign In</a>
+        }
+    </nav>
+
+    <hr />
+
     <div>
         @RenderBody()
     </div>
