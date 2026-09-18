@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace KindeAuth.Net48.Web.Controllers
 {
@@ -10,7 +9,7 @@ namespace KindeAuth.Net48.Web.Controllers
             return View();
         }
 
-        [Authorize]
+        [Authorize(Roles = "portal")]
         public ActionResult Secret()
         {
             return View();
