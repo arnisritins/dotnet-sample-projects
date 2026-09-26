@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="NSwag.MSBuild" Version="14.7.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- Generate API client -->
+  <Target Name="NSwag" BeforeTargets="CoreCompile" Condition="'$(Configuration)' == 'Debug'">
+    <Exec WorkingDirectory="$(ProjectDir)" Command="$(NSwagExe) run nswag.json" />
+  </Target>
+
+</Project>

@@ -1,0 +1,21 @@
+{
+  "runtime": "WinX64",
+
+  "documentGenerator": {
+    "fromDocument": {
+      "url": "https://localhost:44368/swagger"
+    }
+  },
+
+  "codeGenerators": {
+    "openApiToCSharpClient": {
+      "className": "MathApiClient",
+      "operationGenerationMode": "SingleClientFromOperationId",
+      "namespace": "NSwagProject.Services",
+      "generateClientInterfaces": true,
+      "injectHttpClient": true,
+      "disposeHttpClient": false,
+      "output": "Generated\\MathApiClient.cs"
+    }
+  }
+}

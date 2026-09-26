@@ -1,3 +1,9 @@
 <Solution>
-  <Project Path="NSwagProject.WebApi/NSwagProject.WebApi.csproj" Id="7d159733-4f89-4e79-b4de-56022d3de216" />
+  <Folder Name="/Client/">
+    <Project Path="NSwagProject.Console/NSwagProject.Console.csproj" Id="9be67931-38c3-49ea-8bc6-2a48308958fa" />
+    <Project Path="NSwagProject.Services/NSwagProject.Services.csproj" Id="9f485e07-f089-421e-8f7e-3772139be947" />
+  </Folder>
+  <Folder Name="/Server/">
+    <Project Path="NSwagProject.WebApi/NSwagProject.WebApi.csproj" Id="7d159733-4f89-4e79-b4de-56022d3de216" />
+  </Folder>
 </Solution>
